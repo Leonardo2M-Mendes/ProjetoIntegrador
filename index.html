@@ -10,7 +10,7 @@
     <header>
         <div class="container">
             
-            <img src="./img/logo engenharia.png" alt="">
+            <img src="./img/logo-atualizada.png" alt="">
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -32,12 +32,22 @@
 
     <section id="courses">
         <h2>Nossos Cursos</h2>
-        <a href="#"><img src="./img/Curso-de-Automação-Residencial.png" alt="teste"></a>
-        <a href="#"><img src="./img/Curso-de-CLP-IHM-Schneider.png" alt="teste"></a>
-        <a href="#"><img src="./img/Curso-de-Eletricista.png" alt="teste"></a>
-        <a href="#"><img src="./img/Curso-de-Projetos-Elétricos.png" alt="teste"></a>
-        <a href="#"><img src="./img/Curso-de-Segurança-Eletrônica.png" alt="teste"></a>
-        <a href="#"><img src="./img/Curso-Inversor-de-Frequência.png" alt="teste"></a>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item"><img src="./img/Curso-de-Automação-Residencial.png" alt="Curso de Automação Residencial"></div>
+                <div class="carousel-item"><img src="./img/Curso-de-CLP-IHM-Schneider.png" alt="Curso de CLP IHM Schneider"></div>
+                <div class="carousel-item"><img src="./img/Curso-de-Eletricista.png" alt="Curso de Eletricista"></div>
+                <div class="carousel-item"><img src="./img/Curso-de-Projetos-Elétricos.png" alt="Curso de Projetos Elétricos"></div>
+                <div class="carousel-item"><img src="./img/Curso-de-Segurança-Eletrônica.png" alt="Curso de Segurança Eletrônica"></div>
+                <div class="carousel-item"><img src="./img/Curso-Inversor-de-Frequência.png" alt="Curso Inversor de Frequência"></div>
+                <div class="carousel-item"><img src="./img/Curso-de-Comandos-Elétricos..png" alt="Curso de Comandos Elétricos"></div>
+                <div class="carousel-item"><img src="./img/projetoemontagemdepaineis.png" alt="Curso Montagem e Desmontagem de Paineis"></div>
+                <div class="carousel-item"><img src="./img/projetoeletrico.png" alt="Projeto Elétrico"></div>
+                <div class="carousel-item"><img src="./img/projetoeleticoind.png" alt="Projeto Elétrico Industrial"></div>
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
         
     </section>
 
@@ -48,17 +58,56 @@
 
     <section id="contact">
         <h2>Fale Conosco</h2>
-        <p>Entre em contato para mais informações.</p>
-        <form>
-            <input type="text" placeholder="Seu Nome" required>
-            <input type="email" placeholder="Seu Email" required>
-            <textarea placeholder="Sua Mensagem"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+        
+        <div class="contact-container">
+          <div class="contact-info">
+            <p>Telefone: (11) 93303-3331</p>
+            <p>E-mail: escola3eng@gmail.com</p>
+            <p>Endereço: Rua Prudente de Moraes, 742(1° andar) - Vila Nova(Centro) - Salto/SP</p>
+          </div>
+          <div class="contact-form">
+            <div class="social-media"> <a href="https://wa.me/1197476113?text=Olá, gostaria de saber mais sobre os cursos!" target="_blank" rel="noopener noreferrer">
+                <button><img src="./img/logo-whatsapp-png-file-15.png" alt=""></button>
+              </a>
+              <a href="https://www.instagram.com/escola_e3engenharia/" target="_blank" rel="noopener noreferrer">
+                  <button><img src="./img/instagram-logo-5.png" alt=""></button>
+                </a></div>
+           
+            <!-- Você pode adicionar um formulário de contato aqui -->
+          </div>
+        </div>
+      </section>
 
     <footer>
-        <p>&copy; 2025 E3-Engenharia. Todos os direitos reservados.</p>
+        <p>&copy; 2025 E3-Engenharia. Todos os direitos reservados.
+           
+        </p>
     </footer>
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        let index = 0;
+        
+        function updateCarousel() {
+            const itemWidth = document.querySelector('.carousel-item').clientWidth;
+            carousel.style.transform = `translateX(${-index * itemWidth}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (index < carousel.children.length - 1) {
+                index++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (index > 0) {
+                index--;
+                updateCarousel();
+            }
+        });
+    </script>
 </body>
 </html>
